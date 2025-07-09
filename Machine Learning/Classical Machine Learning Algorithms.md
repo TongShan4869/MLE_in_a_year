@@ -1,1 +1,10 @@
-/Users/tongshan/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Knowledge/Machine Learning/Classical Machine Learning Algorithms.md
+---
+tags:
+  - ML
+  - MLE
+---
+
+>[!note] [Scikit learn](https://scikit-learn.org/1.5/index.html) is your best friend for this!
+
+
+# Supervised Learning

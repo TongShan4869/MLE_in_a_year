@@ -1,1 +1,6 @@
-/Users/tongshan/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Knowledge/Math/Probability.md
+---
+tags:
+  - MLE
+  - stats
+  - probability
+---

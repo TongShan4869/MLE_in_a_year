@@ -1,1 +1,6 @@
-/Users/tongshan/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Knowledge/Machine Learning.md
+---
+tags:
+  - ML
+  - MLE
+  - CS
+---

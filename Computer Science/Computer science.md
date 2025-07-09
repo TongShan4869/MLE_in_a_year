@@ -1,1 +1,8 @@
-/Users/tongshan/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Knowledge/Computer Science/Computer science.md
+---
+tags:
+  - CS
+  - MLE
+---
+
+
+[[Algorithms]]

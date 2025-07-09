@@ -1,3 +1,13 @@
+---
+tags:
+  - ML
+  - career
+  - mindmap
+  - blueprint
+  - MLE
+date: 2025-02-04
+---
+
 > Note: “2 years” is an estimate if only you already know what you should know, but just need some time to put them together like a pro.
 
 Reference books: https://huyenchip.com/ml-interviews-book/
@@ -8,28 +18,28 @@ https://deep-ml.com
 ---
 # Technical Skills
 ## Math
-### [Linear algebra](Linear%20algebra.md)
+### [[Linear algebra]]
 Course: https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/
 https://github.com/fastai/numerical-linear-algebra
-- [Vectors](Vectors.md)
-- [Matrices](Matrices.md)
+- [[Vectors]]
+- [[Matrices]]
 - Dimensionality reduction
-### [Calculus](Calculus.md)
+### [[Calculus]]
 - Differentiable functions
 - Convexity
 	- Convex optimization
-### [Probability](Probability.md)
+### [[Probability]]
 - Basic concepts
 	- Random variable
 	- Probability distribution
 - Distributions
 	- 
-### [Statistics](Statistics.md)
-## [Computer science](Computer%20science.md)
+### [[Statistics]]
+## [[Computer science]]
 - Leetcode (Interview 150): https://leetcode.com/studyplan/top-interview-150/
 - Leetcode-101: https://noworneverev.github.io/leetcode_101/
-	- [Leet-code 101](Leet-code%20101.md)
-- [Algorithms](Algorithms.md)
+	- [[Leet-code 101]]
+- [[Algorithms]]
 	- Sorting
 		- Quicksort
 		- radix sort
@@ -43,9 +53,9 @@ https://github.com/fastai/numerical-linear-algebra
 	- Popular problems
 		- stable marriage problem
 		- traveling salesman problem
-- [Complexity](Complexity.md)
+- [[Complexity]]
 - Data
-	- [Data structure](Data%20structure.md)
+	- [[Data structure]]
 		- trees
 			- binary search tree
 			- heap
@@ -58,12 +68,12 @@ https://github.com/fastai/numerical-linear-algebra
 		- pandas
 		- dask
 	- Data visualization
-## [Machine Learning](Machine%20Learning.md)
-### [Machine Learning Basic concept](Machine%20Learning%20Basic%20concept.md)
+## [[Machine Learning]]
+### [[Machine Learning Basic concept]]
 - Basics
 - Sampling and creating training data
 - Objective functions, metrics, and evaluation
-### [Classical Machine Learning Algorithms](Classical%20Machine%20Learning%20Algorithms.md)
+### [[Classical Machine Learning Algorithms]]
 - Supervised Learning Models
 	- Regression
 		- Linear regression
@@ -99,15 +109,15 @@ https://github.com/fastai/numerical-linear-algebra
 - Feed forward networks
 - CNN
 	Course: https://www.youtube.com/playlist?list=PLzUTmXVwsnXod6WNdg57Yc3zFx_f-RYsq
-- [NLP General](NLP%20General.md)
+- [[NLP General]]
 	Course: https://www.youtube.com/playlist?list=PLU40WL8Ol94IJzQtileLTqGZuXtGlLMP_
 	- RNN
 	- LSTM
-	- [Transformer](Transformer.md)
-	- [LLM](LLM.md) (another thing, has its own job position now...)
+	- [[Transformer]]
+	- [[LLM]] (another thing, has its own job position now...)
 		- Fine-tuning
 			- RAG
-		- [Prompt Engineering for ChatGPT](Prompt%20Engineering%20for%20ChatGPT.md)
+		- [[Prompt Engineering for ChatGPT]]
 - Computer vision
 	Course: https://cs231n.github.io/
 - Reinforcement learning
@@ -116,7 +126,7 @@ https://github.com/fastai/numerical-linear-algebra
 - Training DNN
 
 # ML Skills
-## [Machine learning system design](Machine%20learning%20system%20design.md)
+## [[Machine learning system design]]
 ML system design course: https://stanford-cs329s.github.io/
 Full stack ML: https://fall2019.fullstackdeeplearning.com/
 # AI engineer

@@ -1,0 +1,1 @@
+/Users/tongshan/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Knowledge/Train yourself to be a ML AI Engineer or Scientist in1 year.md

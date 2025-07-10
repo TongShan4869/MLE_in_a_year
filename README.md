@@ -1,4 +1,4 @@
-> Note: “1 years” is an estimate if only you already know what you should know, but just need some time to put them together like a pro.
+> Note: “2 years” is an estimate if only you already know what you should know, but just need some time to put them together like a pro.
 
 Reference books: https://huyenchip.com/ml-interviews-book/
 Resources:

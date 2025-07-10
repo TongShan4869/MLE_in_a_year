@@ -144,7 +144,7 @@ $$ \vec{p}_j = \sum_{i=1}^{j-1} (\vec{v}_j \cdot \vec{e}_i) \vec{e}_i $$
 * $\vec{r_j} = \vec{v}_j - \vec{p}_j$ will be orthogonal to all of the $\vec{e}_i$ generated so far.
 * Set $\vec{e}_j = \vec{r}_j/|\vec{r}_j|$. This just scales $\vec{r}_j$ to be of length $1$.
 ##  Vector outer product
-- Refer to [[Matrices]]
+- Refer to [Matrices](Matrices.md)
 $$\mathbf{v} \otimes \mathbf{w}= \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_m \end{bmatrix} \otimes \begin{bmatrix} w_1 \\ w_2 \\ \vdots \\ w_n \end{bmatrix} = A = \begin{bmatrix} v_1w_1 & v_1w_2 & \dots & v_1w_n \\ v_2w_1 & v_2w_2 & \dots & v_2w_n \\ \vdots & \vdots & \ddots & \vdots \\ v_mw_1 & v_mw_2 & \dots & v_mw_n\end{bmatrix}$$
 or 
 $$(\mathbf{v} \otimes \mathbf{w})_{ij}=v_jw_j$$

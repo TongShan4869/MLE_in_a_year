@@ -18,28 +18,28 @@ https://deep-ml.com
 ---
 # Technical Skills
 ## Math
-### [[Linear algebra]]
+### [Linear algebra](Linear%20algebra.md)
 Course: https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/
 https://github.com/fastai/numerical-linear-algebra
-- [[Vectors]]
-- [[Matrices]]
+- [Vectors](Vectors.md)
+- [Matrices](Matrices.md)
 - Dimensionality reduction
-### [[Calculus]]
+### [Calculus](Calculus.md)
 - Differentiable functions
 - Convexity
 	- Convex optimization
-### [[Probability]]
+### [Probability](Probability.md)
 - Basic concepts
 	- Random variable
 	- Probability distribution
 - Distributions
 	- 
-### [[Statistics]]
-## [[Computer science]]
+### [Statistics](Statistics.md)
+## [Computer science](Computer%20science.md)
 - Leetcode (Interview 150): https://leetcode.com/studyplan/top-interview-150/
 - Leetcode-101: https://noworneverev.github.io/leetcode_101/
-	- [[Leet-code 101]]
-- [[Algorithms]]
+	- [Leet-code 101](Leet-code%20101.md)
+- [Algorithms](Algorithms.md)
 	- Sorting
 		- Quicksort
 		- radix sort
@@ -53,9 +53,9 @@ https://github.com/fastai/numerical-linear-algebra
 	- Popular problems
 		- stable marriage problem
 		- traveling salesman problem
-- [[Complexity]]
+- [Complexity](Complexity.md)
 - Data
-	- [[Data structure]]
+	- [Data structure](Data%20structure.md)
 		- trees
 			- binary search tree
 			- heap
@@ -68,12 +68,12 @@ https://github.com/fastai/numerical-linear-algebra
 		- pandas
 		- dask
 	- Data visualization
-## [[Machine Learning]]
-### [[Machine Learning Basic concept]]
+## [Machine Learning](Machine%20Learning.md)
+### [Machine Learning Basic concept](Machine%20Learning%20Basic%20concept.md)
 - Basics
 - Sampling and creating training data
 - Objective functions, metrics, and evaluation
-### [[Classical Machine Learning Algorithms]]
+### [Classical Machine Learning Algorithms](Classical%20Machine%20Learning%20Algorithms.md)
 - Supervised Learning Models
 	- Regression
 		- Linear regression
@@ -109,15 +109,15 @@ https://github.com/fastai/numerical-linear-algebra
 - Feed forward networks
 - CNN
 	Course: https://www.youtube.com/playlist?list=PLzUTmXVwsnXod6WNdg57Yc3zFx_f-RYsq
-- [[NLP General]]
+- [NLP General](NLP%20General.md)
 	Course: https://www.youtube.com/playlist?list=PLU40WL8Ol94IJzQtileLTqGZuXtGlLMP_
 	- RNN
 	- LSTM
-	- [[Transformer]]
-	- [[LLM]] (another thing, has its own job position now...)
+	- [Transformer](Transformer.md)
+	- [LLM](LLM.md) (another thing, has its own job position now...)
 		- Fine-tuning
 			- RAG
-		- [[Prompt Engineering for ChatGPT]]
+		- [Prompt Engineering for ChatGPT](Prompt%20Engineering%20for%20ChatGPT.md)
 - Computer vision
 	Course: https://cs231n.github.io/
 - Reinforcement learning
@@ -126,7 +126,7 @@ https://github.com/fastai/numerical-linear-algebra
 - Training DNN
 
 # ML Skills
-## [[Machine learning system design]]
+## [Machine learning system design](Machine%20learning%20system%20design.md)
 ML system design course: https://stanford-cs329s.github.io/
 Full stack ML: https://fall2019.fullstackdeeplearning.com/
 # AI engineer

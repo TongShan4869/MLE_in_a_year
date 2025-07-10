@@ -5,4 +5,4 @@ tags:
 ---
 
 
-[Algorithms](Algorithms.md)
+[[Algorithms]]

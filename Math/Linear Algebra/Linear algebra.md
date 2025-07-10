@@ -8,8 +8,8 @@ tags:
 date: 2025-02-04
 "# of days to learn": "5"
 ---
-# [Vectors](Vectors.md)
-# [Matrices](Matrices.md)
+# [[Vectors]]
+# [[Matrices]]
 # Dimensionality reduction
 # EigenValue and Eigenvector
 

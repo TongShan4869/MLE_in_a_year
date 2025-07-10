@@ -11,6 +11,6 @@ tags:
 ---
 
 # LLM Optimization 
-## [Retrieval Augmented Generation (RAG)](Retrieval%20Augmented%20Generation%20(RAG).md)
-## [Fine-tuning](Fine-tuning.md)
-## [Prompt Engineering for ChatGPT](Prompt%20Engineering%20for%20ChatGPT.md)
+## [[Retrieval Augmented Generation (RAG)]]
+## [[Fine-tuning]]
+## [[Prompt Engineering for ChatGPT]]

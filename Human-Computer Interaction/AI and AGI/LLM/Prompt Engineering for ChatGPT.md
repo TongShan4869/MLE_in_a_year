@@ -121,7 +121,7 @@ e.g.
 # Model limitations: Hallucinations
 - first find relevant information
 - then answer the question based on the relevant information
-- -> [Retrieval Augmented Generation (RAG)](Retrieval%20Augmented%20Generation%20(RAG).md)
+- -> [[Retrieval Augmented Generation (RAG)]]
 
 # Iterative Prompt Development
 ## Prompt guidelines

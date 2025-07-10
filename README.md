@@ -8,28 +8,28 @@ https://deep-ml.com
 ---
 # Technical Skills
 ## Math
-### [Linear algebra](Linear%20algebra.md)
+### [Linear algebra](Math/Linear%20Algebra/Linear%20algebra.md)
 Course: https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/
 https://github.com/fastai/numerical-linear-algebra
-- [Vectors](Vectors.md)
-- [Matrices](Matrices.md)
+- [Vectors](Math/Linear%20Algebra/Vectors.md)
+- [Matrices](Math/Linear%20Algebra/Matrices.md)
 - Dimensionality reduction
-### [Calculus](Calculus.md)
+### [Calculus](Math/Calculus/Calculus.md)
 - Differentiable functions
 - Convexity
 	- Convex optimization
-### [Probability](Probability.md)
+### [Probability](Math/Probability.md)
 - Basic concepts
 	- Random variable
 	- Probability distribution
 - Distributions
 	- 
-### [Statistics](Statistics.md)
-## [Computer science](Computer%20science.md)
+### [Statistics](Math/Stats/Statistics.md)
+## [Computer science](Computer%20Science/Computer%20science.md)
 - Leetcode (Interview 150): https://leetcode.com/studyplan/top-interview-150/
 - Leetcode-101: https://noworneverev.github.io/leetcode_101/
 	- [Leet-code 101](Leet-code%20101.md)
-- [Algorithms](Algorithms.md)
+- [Algorithms](#broken-link)
 	- Sorting
 		- Quicksort
 		- radix sort
@@ -43,7 +43,7 @@ https://github.com/fastai/numerical-linear-algebra
 	- Popular problems
 		- stable marriage problem
 		- traveling salesman problem
-- [Complexity](Complexity.md)
+- [Complexity](Computer%20Science/Complexity.md)
 - Data
 	- [Data structure](Data%20structure.md)
 		- trees
@@ -59,11 +59,11 @@ https://github.com/fastai/numerical-linear-algebra
 		- dask
 	- Data visualization
 ## [Machine Learning](Machine%20Learning.md)
-### [Machine Learning Basic concept](Machine%20Learning%20Basic%20concept.md)
+### [Machine Learning Basic concept](Machine%20Learning/Machine%20Learning%20Basic%20concept.md)
 - Basics
 - Sampling and creating training data
 - Objective functions, metrics, and evaluation
-### [Classical Machine Learning Algorithms](Classical%20Machine%20Learning%20Algorithms.md)
+### [Classical Machine Learning Algorithms](Machine%20Learning/Classical%20Machine%20Learning%20Algorithms.md)
 - Supervised Learning Models
 	- Regression
 		- Linear regression
@@ -99,15 +99,15 @@ https://github.com/fastai/numerical-linear-algebra
 - Feed forward networks
 - CNN
 	Course: https://www.youtube.com/playlist?list=PLzUTmXVwsnXod6WNdg57Yc3zFx_f-RYsq
-- [NLP General](NLP%20General.md)
+- [NLP General](Machine%20Learning/Deep%20Learning/NLP/NLP%20General.md)
 	Course: https://www.youtube.com/playlist?list=PLU40WL8Ol94IJzQtileLTqGZuXtGlLMP_
 	- RNN
 	- LSTM
-	- [Transformer](Transformer.md)
-	- [LLM](LLM.md) (another thing, has its own job position now...)
+	- [Transformer](Machine%20Learning/Deep%20Learning/NLP/Transformer.md)
+	- [LLM](Human-Computer%20Interaction/AI%20and%20AGI/LLM/LLM.md) (another thing, has its own job position now...)
 		- Fine-tuning
 			- RAG
-		- [Prompt Engineering for ChatGPT](Prompt%20Engineering%20for%20ChatGPT.md)
+		- [Prompt Engineering for ChatGPT](Human-Computer%20Interaction/AI%20and%20AGI/LLM/Prompt%20Engineering%20for%20ChatGPT.md)
 - Computer vision
 	Course: https://cs231n.github.io/
 - Reinforcement learning
@@ -116,7 +116,7 @@ https://github.com/fastai/numerical-linear-algebra
 - Training DNN
 
 # ML Skills
-## [Machine learning system design](Machine%20learning%20system%20design.md)
+## [Machine learning system design](Machine%20Learning/ML%20System/Machine%20learning%20system%20design.md)
 ML system design course: https://stanford-cs329s.github.io/
 Full stack ML: https://fall2019.fullstackdeeplearning.com/
 # AI engineer

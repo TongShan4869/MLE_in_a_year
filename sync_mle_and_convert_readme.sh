@@ -23,8 +23,48 @@ find "$PRIVATE_VAULT" -type f -name "*.md" | while read -r filepath; do
     fi
 done
 
-# 3. Convert README.md to GitHub-compatible format
-echo "📄 Converting README for GitHub compatibility..."
-perl -0777 -pe 's/\A---\n.*?\n---\n+//s' "$README_SOURCE" | perl -pe 's/\[\[([^\]]+?)\]\]/"[".$1."](".(join "%20", split(" ", $1)).".md)"/ge' > "$README_TARGET"
+# 3. Convert README with resolved GitHub-style links
+echo "📄 Generating GitHub-compatible README with correct relative links..."
+python3 - "$README_SOURCE" "$README_TARGET" "$PUBLIC_VAULT" << 'ENDPY'
 
-echo "✅ README.md converted and MLE notes synced."
+import os
+import re
+import sys
+import urllib.parse
+
+readme_src, readme_dest, public_vault = sys.argv[1:4]
+
+# Load README
+with open(readme_src, "r", encoding="utf-8") as f:
+    content = f.read()
+
+# Remove YAML frontmatter
+content = re.sub(r"^---.*?---\s*", "", content, flags=re.DOTALL)
+
+# Build map from [[Note]] to relative path
+note_map = {}
+for root, _, files in os.walk(public_vault):
+    for file in files:
+        if file.endswith(".md"):
+            title = os.path.splitext(file)[0]
+            abs_path = os.path.join(root, file)
+            rel_path = os.path.relpath(abs_path, os.path.dirname(readme_dest))
+            url_path = urllib.parse.quote(rel_path)
+            note_map[title] = url_path
+
+# Replace [[Note]] with [Note](url)
+def replacer(match):
+    title = match.group(1).strip()
+    return f"[{title}]({note_map.get(title, '#broken-link')})"
+
+converted = re.sub(r"\[\[([^\]]+)\]\]", replacer, content)
+
+# Save new README
+with open(readme_dest, "w", encoding="utf-8") as f:
+    f.write(converted)
+
+print("✅ README updated with correct links.")
+
+ENDPY
+
+echo "✅ All done."

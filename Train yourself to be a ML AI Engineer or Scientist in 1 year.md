@@ -8,12 +8,12 @@ tags:
 date: 2025-02-04
 ---
 
-> Note: “2 years” is an estimate if only you already know what you should know, but just need some time to put them together like a pro.
+> Note: “1 years” is an estimate if only you already know what you should know, but just need some time to put them together like a pro.
 
-Reference books: https://huyenchip.com/ml-interviews-book/
-Resources:
-https://deep-learning-drizzle.github.io/
-https://deep-ml.com
+- Reference books: https://huyenchip.com/ml-interviews-book/
+- Resources:
+	- https://deep-learning-drizzle.github.io/
+	- https://deep-ml.com
 
 ---
 # Technical Skills
@@ -36,13 +36,28 @@ https://github.com/fastai/numerical-linear-algebra
 	- 
 ### [[Statistics]]
 ## [[Computer science]]
-- Leetcode (Interview 150): https://leetcode.com/studyplan/top-interview-150/
-- Leetcode-101: https://noworneverev.github.io/leetcode_101/
-	- [[Leet-code 101]]
+- Resources
+	- Leetcode (Interview 150): https://leetcode.com/studyplan/top-interview-150/
+	- Leetcode-101: https://noworneverev.github.io/leetcode_101/
+		- Notes: [[Leet-code 101]]
 - [[Algorithms]]
+	- Greedy algorithms
+	- Two pointers
+		- two sum
+		- merge
+		- sliding window
+	- Binary search / bisection
 	- Sorting
 		- Quicksort
+		- merge sort
 		- radix sort
+	- Search
+		- depth-first search (DFS)
+		- backtracking
+		- breadth-ﬁrst search (BFS)
+	- Dynamic Programming (DP)
+	- Divide and Conquer
+	- 
 	- Shortest path
 		- Dijkstra's
 		- A*
@@ -63,7 +78,6 @@ https://github.com/fastai/numerical-linear-algebra
 		- Queues, stacks, priority queues
 		- Linked lists
 		- HashMap and HashTable
-		- 
 	- Data manipulation
 		- pandas
 		- dask
@@ -121,18 +135,27 @@ https://github.com/fastai/numerical-linear-algebra
 - Computer vision
 	Course: https://cs231n.github.io/
 - Reinforcement learning
-	Course: https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ
-	- 
+	- Course: https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ
 - Training DNN
 
-# ML Skills
 ## [[Machine learning system design]]
-ML system design course: https://stanford-cs329s.github.io/
-Full stack ML: https://fall2019.fullstackdeeplearning.com/
-# AI engineer
-[What Is an AI Engineer? (And How to Become One)](https://www.coursera.org/articles/ai-engineer)
+- Resources
+	- ML system design course: https://stanford-cs329s.github.io/
+	- Full stack ML: https://fall2019.fullstackdeeplearning.com/
+## AI engineer
+- [What Is an AI Engineer? (And How to Become One)](https://www.coursera.org/articles/ai-engineer)
+- [[LLM]]
+	- [[Prompt Engineering]]
+		- [[Prompt Engineering for ChatGPT]]
+		- [[Retrieval Augmented Generation (RAG)]]
+	- [[AI Agent]]
+		- Resources: 
+			- [500 AI Agents Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects)
+		- [[Building Your Agents - Data analysis agents]]
+		- [[Evaluating AI Agents]]
+		- 
 
-## Build up online presence
+# Build up online presence
 - Github
 - Medium blog post
 - Twitter

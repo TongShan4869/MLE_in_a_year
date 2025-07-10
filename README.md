@@ -1,9 +1,9 @@
-> Note: “2 years” is an estimate if only you already know what you should know, but just need some time to put them together like a pro.
+> Note: “1 years” is an estimate if only you already know what you should know, but just need some time to put them together like a pro.
 
-Reference books: https://huyenchip.com/ml-interviews-book/
-Resources:
-https://deep-learning-drizzle.github.io/
-https://deep-ml.com
+- Reference books: https://huyenchip.com/ml-interviews-book/
+- Resources:
+	- https://deep-learning-drizzle.github.io/
+	- https://deep-ml.com
 
 ---
 # Technical Skills
@@ -26,13 +26,28 @@ https://github.com/fastai/numerical-linear-algebra
 	- 
 ### [Statistics](Math/Stats/Statistics.md)
 ## [Computer science](Computer%20Science/Computer%20science.md)
-- Leetcode (Interview 150): https://leetcode.com/studyplan/top-interview-150/
-- Leetcode-101: https://noworneverev.github.io/leetcode_101/
-	- [Leet-code 101](Leet-code%20101.md)
+- Resources
+	- Leetcode (Interview 150): https://leetcode.com/studyplan/top-interview-150/
+	- Leetcode-101: https://noworneverev.github.io/leetcode_101/
+		- Notes: [Leet-code 101](Leet-code%20101.md)
 - [Algorithms](#broken-link)
+	- Greedy algorithms
+	- Two pointers
+		- two sum
+		- merge
+		- sliding window
+	- Binary search / bisection
 	- Sorting
 		- Quicksort
+		- merge sort
 		- radix sort
+	- Search
+		- depth-first search (DFS)
+		- backtracking
+		- breadth-ﬁrst search (BFS)
+	- Dynamic Programming (DP)
+	- Divide and Conquer
+	- 
 	- Shortest path
 		- Dijkstra's
 		- A*
@@ -53,12 +68,11 @@ https://github.com/fastai/numerical-linear-algebra
 		- Queues, stacks, priority queues
 		- Linked lists
 		- HashMap and HashTable
-		- 
 	- Data manipulation
 		- pandas
 		- dask
 	- Data visualization
-## [Machine Learning](Machine%20Learning.md)
+## [Machine Learning](Machine%20Learning/Machine%20Learning.md)
 ### [Machine Learning Basic concept](Machine%20Learning/Machine%20Learning%20Basic%20concept.md)
 - Basics
 - Sampling and creating training data
@@ -111,18 +125,27 @@ https://github.com/fastai/numerical-linear-algebra
 - Computer vision
 	Course: https://cs231n.github.io/
 - Reinforcement learning
-	Course: https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ
-	- 
+	- Course: https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ
 - Training DNN
 
-# ML Skills
 ## [Machine learning system design](Machine%20Learning/ML%20System/Machine%20learning%20system%20design.md)
-ML system design course: https://stanford-cs329s.github.io/
-Full stack ML: https://fall2019.fullstackdeeplearning.com/
-# AI engineer
-[What Is an AI Engineer? (And How to Become One)](https://www.coursera.org/articles/ai-engineer)
+- Resources
+	- ML system design course: https://stanford-cs329s.github.io/
+	- Full stack ML: https://fall2019.fullstackdeeplearning.com/
+## AI engineer
+- [What Is an AI Engineer? (And How to Become One)](https://www.coursera.org/articles/ai-engineer)
+- [LLM](Human-Computer%20Interaction/AI%20and%20AGI/LLM/LLM.md)
+	- [Prompt Engineering](#broken-link)
+		- [Prompt Engineering for ChatGPT](Human-Computer%20Interaction/AI%20and%20AGI/LLM/Prompt%20Engineering%20for%20ChatGPT.md)
+		- [Retrieval Augmented Generation (RAG)](#broken-link)
+	- [AI Agent](#broken-link)
+		- Resources: 
+			- [500 AI Agents Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects)
+		- [Building Your Agents - Data analysis agents](#broken-link)
+		- [Evaluating AI Agents](#broken-link)
+		- 
 
-## Build up online presence
+# Build up online presence
 - Github
 - Medium blog post
 - Twitter

@@ -29,9 +29,8 @@ tags:
 - 遇到更难理解的解法，如果5分钟内搞不懂，先跳过！
 
 # 07/10/2025
-# Greedy algorithm
 ## 605 https://leetcode.com/problems/can-place-flowers/description/
-- you can stop early
+- you can stop early!!
 ## 452 https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/
 - don't over think!!!
 - in greedy algorithm, just focus on the local optimization first, then general optimization

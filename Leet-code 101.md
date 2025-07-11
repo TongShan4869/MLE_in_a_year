@@ -27,3 +27,15 @@ tags:
 - 重点在于你应该remove哪个 -> remove 尾部最大的那个！！因为你已经sort过了～
 ## 反思
 - 遇到更难理解的解法，如果5分钟内搞不懂，先跳过！
+
+# 07/10/2025
+# Greedy algorithm
+## 605 https://leetcode.com/problems/can-place-flowers/description/
+- you can stop early
+## 452 https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/
+- don't over think!!!
+- in greedy algorithm, just focus on the local optimization first, then general optimization
+- when your index go from left to right, to find the overlap, always sort the end of the interval!
+## 762 https://leetcode.com/problems/partition-labels/description/
+## 122 https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/
+

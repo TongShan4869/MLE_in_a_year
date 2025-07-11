@@ -17,11 +17,10 @@ link: https://noworneverev.github.io/leetcode_101/
 #### [\#135 Candy](https://leetcode.com/problems/candy/description/)
 - We solved by store candy distribution and compare from left to right and right to left
 	- this is two-pass solution
-- however, people can do it with one-pass solution!
+- however, people can do it with [one-pass solution](https://leetcode.com/problems/candy/solutions/4037646/99-20-greedy-two-one-pass/)!
 	- peak / valley count
 	- don't need to store the whole candy distribution
 	- space complexity  = `O(1)`
-	- see here: https://leetcode.com/problems/candy/solutions/4037646/99-20-greedy-two-one-pass/
 ### 区间问题
 #### [\#435 Non-overlapping intervals](https://leetcode.com/problems/non-overlapping-intervals/description/)
 - sort first

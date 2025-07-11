@@ -40,7 +40,7 @@ date: 2025-02-04
 - Resources
 	- [Leetcode (Interview 150)](https://leetcode.com/studyplan/top-interview-150/)
 	- [Leetcode-101](https://noworneverev.github.io/leetcode_101/)
-		- Notes: [[Leet-code 101]]
+		- Notes: [[Leetcode 101 Practice Log]]
 - [[Algorithms]]
 	- Greedy algorithms
 	- Two pointers

@@ -30,7 +30,7 @@
 - Resources
 	- [Leetcode (Interview 150)](https://leetcode.com/studyplan/top-interview-150/)
 	- [Leetcode-101](https://noworneverev.github.io/leetcode_101/)
-		- Notes: [Leet-code 101](Leet-code%20101.md)
+		- Notes: [Leetcode 101 Practice Log](Leetcode%20101%20Practice%20Log.md)
 - [Algorithms](#broken-link)
 	- Greedy algorithms
 	- Two pointers

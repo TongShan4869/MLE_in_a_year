@@ -166,3 +166,124 @@ date: 2025-02-04
 - Twitter
 - LinkedIn
 
+# interview question
+- 45min 2-min leetcode
+- full-loop 1-2 day, onsite/virtual
+	- 2 leetcode
+	- 2 leetcode - 决定能不能过
+	- behavior question
+	- system design - 决定等级
+
+# Behavior question
+signal: 只需要答指标
+- show you are a result driven person
+	- 有metric
+	- show your leadership
+		- take initiative
+		- 主动联系别人/组织起来
+	- tell me about a time...
+		- 举最近发生的事情
+		- 一年以内
+- show you can resolve conflict
+	- open-minded person
+	- view conflict as opportunity
+	- find common ground
+	- respect
+	- use data to resolve problem
+- you can progress ambiguity
+	- make a decision with a full-picture
+	- trade-off 
+- Growth
+	- coffee talk
+	- improvement and take feedback
+- communication
+	- STAR format for every answer
+- For PhD
+	- why PhD and postdoc
+	- favorite project 3-6 min
+	- why this company?
+
+# ML System Design
+- grokking: https://github.com/judylime/grokking/tree/main/Grokking%20the%20Machine%20Learning%20Interview
+- meta 只考 rec sys
+	- **马上反问：我们的business goal是什么？**
+		- 指标metric
+	- clarify problem scope
+		- 多少商品，网页，user？
+	- 陈述：经过discussion后，我们的实际问题是
+		- given xxx, input is xxx, output is xxx (with length of xxx)
+		- if scroll down refresh with new data...
+		- this is a **classification problem**
+	- 作答：
+		- outline answer structure
+			- data
+				- positive negative data
+				- data collection
+				- data imbalance
+				- train, test split
+					- past data for training
+					- recent data for testing
+				- off-line metric
+					- cross-entropy loss
+					- precision
+					- recall
+					- F-1
+					- AUC
+					- NDCG
+			- feature
+				- 看grokking!!
+				- user
+				- document
+				- context
+				- define feature
+					- continuous / dense
+					- categorical / sparse 
+						- basic graph embedding
+						- save in look-up table
+						- pytorch pipeline
+				- cold start (e.g., new user)
+					- averaged pooling
+					- weighted pooling
+					- side information
+			- model
+				- 一定要说！！
+					- retrieval system
+						- focus on recall
+						- cheap algorithms
+							- multi-conditional selection
+							- Logistic regression
+							- MART
+								- tree based algorithm
+						- Two-tower model
+							- user-tower
+							- item-tower
+					- ranking system
+						- focus on precision
+						- point-wise rank
+							- 排大榜
+						- pair-wise rank
+							- 接近人做比较的感觉
+						- advance NN
+							- wide and deep learning
+								- look up paper!
+							- deep and cross network
+								- paper
+							- HSTU
+								- paper
+			- online deployment
+				- online metric
+					- call-back business goal
+					- click-through rate
+					- A/B forward test
+						- control model
+						- variation model
+						- null hypothesis
+						- power analysis
+						- t test to decide 
+						- B/A backward test
+							- un-do the luanch
+				- online learning
+		- 问，需要讲那些部分呢？
+# Data science
+- 要刷pandas
+	- SQL

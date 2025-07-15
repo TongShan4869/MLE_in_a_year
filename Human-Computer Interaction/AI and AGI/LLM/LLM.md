@@ -3,6 +3,7 @@ tags:
   - ML
   - LLM
   - MLE
+link: https://github.com/mlabonne/llm-course?tab=readme-ov-file
 ---
 # Courses
 - [Stanford CS324](https://stanford-cs324.github.io/winter2022/)

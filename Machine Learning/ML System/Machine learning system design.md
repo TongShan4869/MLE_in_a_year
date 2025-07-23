@@ -2,5 +2,327 @@
 tags:
   - ML
   - MLE
+  - system_design
+link: Grockking, ML System Design Interview
 ---
+# Introduction and overview
+## Components of a production-ready
+- data stacks to manage data 
+- serving infrastructure to make the system available to millions of users
+- an evaluation pipeline to measure the performance of the proposed system
+- monitoring to ensure the model's performance doesn't degrade over time
+- etc
+![[Pasted image 20250722094945.png]]
+## **Interview question key steps**
+### **Clarifying requirements**
+- **Business objective**
+	- e.g., increase the venue
+- **Features the system needs to support**
+	- What are some of the features that the system is expected to support which could affect our ML system design?
+	- e.g., for video recommendation, might want to know if users can “like” or “dislike” recommended videos, as those interactions could be used to label training data
+- **Data**
+	- What are the data sources? 
+	- How large is the dataset? 
+	- Is the data labeled?
+- **Constraints**
+	- How much computing power is available? 
+	- Is it a cloud-based system, or should the system work on a device? 
+	- Is the model expected to improve automatically over time?
+- **Scale of the system**
+	- How many users do we have? 
+	- How many items, such as videos, are we dealing with? 
+	- What’s the rate of growth of these metrics?
+- **Performance**
+	- How fast must prediction be? 
+	- Is a real-time solution expected? 
+	- Does accuracy have more priority or latency?
+- others
+	- privacy and ethics
+	- etc...
+- At the end of this step...
+	- reach an agreement with the interviewer about the **scope and requirements of the system**
+	- **write down the list** of requirements and constraints we gather
+1. **Framing the problem as an ML task**
+- **Defining the ML objective**
+	- translate the business objective into a well-defined ML objective. 
+		- e.g., Event ticket selling app
+			- business objective: Increase ticket sales
+			- ML objective: Maximize the number of event registrations
+	- A good ML objective is one that ML models can solve.
+- **Specifying the system’s input and output**
+	- In some cases, the system may consist of more than one ML model. If so, we need to specify the input and output of each ML model.
+	- there might be multiple ways to specify each model’s input-output.
+		- ![[Pasted image 20250722100607.png]]
+- **Choosing the right ML category**
+	- [[Supervised learning]]
+		- [[Classification]]
+			- Binary
+			- Multiclass
+		- [[Regression]]
+	- [[Unsupervised learning]]
+	- [[Reinforcement learning]]
+	- ![[Pasted image 20250722100758.png]]
+- Talking points can be used in interview
+	- What is a good ML objective? How do different ML objectives compare? What are the pros and cons?
+	- What are the inputs and outputs of the system, given the ML objective?
+	- If more than one model is involved in the ML system, what are the inputs and outputs of each model?
+	- Does the task need to be learned in a supervised or unsupervised way?
+	- Is it better to solve the problem using a regression or classification model? In the case of classification, is it binary or multiclass? In the case of regression, what is the output range?
+### **Data preparation**
+- ![[Pasted image 20250722101436.png]]
+- **Data Engineering**
+	- **Data Source**
+		- who collected it? 
+		- How clean is the data? 
+		- Can the data source be trusted? 
+		- Is the data user-generated or system generated?
+	- **Data Storage** / database
+		- a repository for persistently storing and managing collections of data
+		- Different types of databases: ![[Pasted image 20250722101731.png]]
+	- **Extract, transform, and load (ETL)**
+		- **Extract.** This process extracts data from different data sources.
+		- **Transform.** In this phase, data is often cleansed, mapped, and transformed into a specific format to meet operational needs
+		- **Load.** The transformed data is loaded into the target destination, which can be a file, a database, or a data warehouse
+	- **Data Types**
+		- Structured data 
+			- Characteristics
+				- Predefined schema
+				- Easy to search
+			- Resides in
+				- Relational databases
+				- Many NoSQL databases can store structured data
+				- Data warehouses
+			-  e.g., Dates, Phone numbers, Credit card numbers, Addresses, Names
+			- **Numerical data**
+				- continuous
+				- discrete
+			- **Categorical data**
+				- nominal: data with no numerical relationship between its categories
+				- ordinal: data with a predetermined or sequential order
+					- e.g., rating data which takes three unique values from "not happy", "neutral", and "happy"
+		-  Unstructured data 
+			- Characteristics
+				- No schema
+				- Difficult to search
+			- Resides in
+				- NoSQL databases
+				- Data lakes
+			- e.g., Text files, Audio files, Images, Videos 
+		- ![[Pasted image 20250722101940.png]]
+		- Models for structured and unstructured data
+			- Structured data
+				- [[Decision Tree]]
+				- Linear models (e.g., linear [[Regression]])
+				- [[SVM]]
+				- [[Naive Bayes]]
+				- [[KNN]]
+				- [[Deep learning]]
+			- Unstructured data
+				- [[Deep learning]]
+	- **Feature Engineering**
+		- Processes:
+			- Using domain knowledge to select and extract predictive features from raw data
+			- Transforming predictive features into a format usable by the model
+		- **Feature engineering operations**
+			- transform the selected features into a format the model can use
+			- **Handling missing values**
+				- **Deletion**
+					- row deletion
+						- remove a row representing a data point if the data point has many missing values.
+					- column deletion
+						- delete whole column representing a feature, if the feature has too many missing values
+				- **Imputation**
+					- Filling in missing values with their defaults
+					- Filling in missing values with the mean, median, or mode (the most common value)
+				- It’s important to note that no technique is perfect for handling missing values, as each has its trade-offs
+			- **Feature scaling**
+				- scaling features to have a standard range and distribution
+				- **Normalization (min-max scaling)**
+					- normalization does not change the distribution of the feature
+					- $$z=\dfrac{x-x_{min}}{x_{max}-x_{min}}$$
+				- **Standardization (Z-score normalization)**
+					- changing the distribution of a feature to have a 0 mean and a standard deviation of 1
+					- $$z=\dfrac{x-\mu}{\sigma}$$
+				- **Log scaling**
+					- To mitigate the skewness of a feature
+					- can make data distribution less skewed, and enable the optimization algorithm to converge faster
+					- $$z=log(x)$$
+			- **Discretization (Bucketing)**
+				- converting a continuous feature into a categorical feature
+				- allows the model to focus on learning only a few categories instead of attempting to learn an infinite number of possibilities
+				- Discretization can also be applied to discrete features
+			- **Encoding categorical features**
+				- in most ML, all inputs and outputs must be numerical. This means if a feature is categorical, we should encode it into numbers before sending it to the model
+				- **Integer encoding**: An integer value is assigned to each unique category value
+					- e.g., “Excellent” is 1, “Good” is 2, and “Bad” is 3. 
+					- This method is useful if the integer values have a natural relationship with each other
+				- **One-hot encoding**
+					- a new binary feature is created for each unique value
+				- **Embedding learning**
+					- An embedding is a mapping of a categorical feature into an NN-dimensional vector
+					- learning an N-dimensional vector for each unique value that the categorical feature may take
+					- useful when the number of unique values the feature takes is very large
+- Talking points
+	- **Data availability and data collection:** 
+		- What are the data sources? 
+		- What data is available to us, and how do we collect it? 
+		- How large is the data size? 
+		- How often do new data come in?
+	- **Data storage:** 
+		- Where is the data currently stored? 
+		- Is it on the cloud or on user devices? 
+		- Which data format is appropriate for storing the data? 
+		- How do we store multimodal data, e.g., a data point that might contain both images and texts?
+	- **Feature engineering:** 
+		- How do we process raw data into a form that’s useful for the models? 
+		- What should we do about missing data? 
+		- Is feature engineering required for this task? 
+		- Which operations do we use to transform the raw data into a format usable by the ML model? 
+		- Do we need to normalize the features? 
+		- Which features should we construct from the raw data? 
+		- How do we plan to combine data of different types, such as texts, numbers, and images?
+	- **Privacy:** 
+		- How sensitive are the available data? 
+		- Are users concerned about the privacy of their data? 
+		- Is anonymization of user data necessary? 
+		- Is it possible to store users’ data on our servers, or is it only possible to access their data on their devices?
+	- **Biases:** 
+		- Are there any biases in the data? 
+		- If yes, what kinds of biases are present, and how do we correct them?
+### **Model development**
+- **Model selection**
+	- **Establish a simple baseline**
+		- e.g., in a video recommendation system, the baseline can be obtained by recommending the most popular videos
+	- **Experiment with simple models** 
+		- After we have a baseline, a good practice is to explore ML algorithms that are quick to train, such as logistic regression.
+	- **Switch to more complex models** 
+		- If simple models cannot deliver satisfactory results, we can then consider more complex models, such as deep neural networks
+	- **Use an ensemble of models if we want more accurate predictions** 
+		- Using an ensemble of multiple models instead of only one may improve the quality of predictions
+		- Creating an ensemble can be accomplished in three ways: 
+			- bagging 
+			- boosting
+			- stacking
+	- In an interview setting, it’s important to explore various model options and discuss their pros and cons
+	- When examining different options, it’s good to briefly explain the algorithm and discuss the trade-offs.
+	- consider different aspects of a model:
+		- The amount of data the model needs to train on
+		- Training speed
+		- Hyperparameters to choose and hyperparameter tuning techniques
+		- Possibility of continual learning
+		- Compute requirements. A more complex model might deliver higher accuracy, but might require more computing power, such as a GPU instead of a CPU
+		- Model’s interpretability. A more complex model can give better performance, but its results may be less interpretable
+	- **There is no single best algorithm that solves all problems**
+- **Model Training**
+	- **Constructing the dataset**
+		- ![[Pasted image 20250722111104.png]]
+		- **Collect the raw data**
+		- **Identify features and labels**
+			- **Hand labeling**: individual annotators label the data by hand.
+				- Pros: Accurate
+				- Cons: expensive and slow, introduces bias, requires domain knowledge, and is a threat to data privacy
+			- **Natural labeling**: the ground truth labels are inferred automatically without human annotations.
+		- **Select a sampling strategy**
+			-  Common sampling strategies: convenience sampling, snowball sampling, stratified sampling, reservoir sampling, and importance sampling.
+		- **Split the data**: dividing the dataset into training, evaluation (validation), and test dataset
+		- **Address any class imbalances**
+			- **Resampling training data**: adjusting the ratio between different classes, making the data more balanced
+				- oversample the minority class or undersample the majority class
+			- **Altering the loss function**
+				- A higher weight in the loss function penalizes the model more when it makes a wrong prediction about a minority class -> learn minority classes more effectively
+				- class-balanced loss 
+				- focal loss
+	- **Choosing the loss function**
+		- select from a list of loss function
+	- **Training from scratch vs. fine-tuning**
+		- Fine-tuning means continuing to train the model on new data by making small changes to its learned parameters.
+		- discuss with interviewer
+	- **Distributed training**
+		- dividing the work among multiple worker nodes. worker nodes operate in parallel in order to **speed up model training**
+		- **data parallelism**
+		- **model parallelism**
+- Talking points
+	- **Model selection:** Which ML models are suitable for the task, and what are their pros and cons. Here’s a list of topics to consider during model selection:
+		- The time it takes to train
+		- The amount of training data the model expects
+		- The computing resources the model may need
+		- Latency of the model at inference time
+		- Can the model be deployed on a user’s device?
+		- Model’s interpretability. Making a model more complex may increase its performance, but the results might be harder to interpret
+		- Can we leverage continual training, or should we train from scratch?
+		- How many parameters does the model have? How much memory is needed?
+		- For neural networks, you might want to discuss typical architectures/blocks, such as ResNet or Transformer-based architectures. You can also discuss the choice of hyperparameters, such as the number of hidden layers, the number of neurons, activation functions, etc.
+	- **Dataset labels:** How should we obtain the labels? Is the data annotated, and if so, how good are the annotations? If natural labels are available, how do we get them? How do we receive user feedback on the system? How long does it take to get natural labels?
+	- **Model training.**
+		- What loss function should we choose? (e.g., Cross-entropy, MSE, MAE, Huber loss, etc.)
+		- What regularization should we use? (e.g., L1, L2, Entropy Regularization, K-fold CV, or dropout)
+		- What is backpropagation?
+		- You may need to describe common optimization methods such as SGD, AdaGrad, Momentum, and RMSProp.
+		- What activation functions do we want to use and why? (e.g., ELU, ReLU, Tanh, Sigmoid).
+		- How to handle an imbalanced dataset?
+		- What is the bias/variance trade-off?
+		- What are the possible causes of overfitting and underfitting? How to address them?
+	- **Continual learning:** Do we want to train the model online with each new data point? Do we need to personalize the model to each user? How often do we retrain the model? Some models need to be retrained daily or weekly, and others monthly or yearly.
+### **Evaluation**
+- **Offline evaluation**
+	- Common offline metrics: ![[Screenshot 2025-07-22 at 11.32.52 AM.png]]
+- **Online evaluation**
+	- usually tied to business objectives
+	- Common online metrics: ![[Screenshot 2025-07-22 at 11.34.29 AM.png]]
+- Talking points
+	- **Online metrics:** Which metrics are important for measuring the effectiveness of the ML system online? How do these metrics relate to the business objective?
+	- **Offline metrics:** Which offline metrics are good at evaluating the model’s predictions during the development phase?
+	- **Fairness and bias:** Does the model have the potential for bias across different attributes such as age, gender, race, etc.? How would you fix this? What happens if someone with malicious intent gets access to your system?
+1. **Deployment and serving**
+- **Cloud vs. on-device deployment**![[Screenshot 2025-07-22 at 11.38.27 AM.png]]
+- **Model compression**
+	- **Knowledge distillation:** The goal of knowledge distillation is to train a small model (student) to mimic a larger model (teacher).
+	- **Pruning:** Pruning refers to the process of finding the least useful parameters and setting them to zero. This leads to sparser models which can be stored more efficiently.
+	- **Quantization:** Model parameters are often represented with 32-bit floating numbers. In quantization, we use fewer bits to represent the parameters, which reduces the model’s size. Quantization can happen during training or post-training.
+- **Test in production**
+	- **Shadow deployment**
+		-  deploy the new model in parallel with the existing model
+		- Each incoming request is routed to both models, but only the existing model's prediction is served to the user
+		- minimize the risk of unreliable predictions until the newly developed model has been thoroughly tested, but this is a costly approach that doubles the number of predictions.
+	- **A/B testing**
+		- deploy the new model in parallel with the existing model. 
+		- A portion of the traffic is routed to the newly developed model, while the remaining requests are routed to the existing model.
+		- First, the traffic routed to each model has to be **random**. 
+		- Second, A/B tests should be run on a **sufficient number of data points** in order for the results to be legitimate.
+- **Prediction pipeline**
+	- **Batch prediction**: model makes predictions periodically
+		-  Drawbacks
+			- the model becomes less responsive to the changing preferences of users
+			- batch prediction is only possible if we know in advance what needs to be pre-computed
+	- **Online prediction**: predictions are generated and returned as soon as requests arrive
+		- Drawbacks: model might take too long to generate predictions
+	- 
+- Talking points
+	- Is model compression needed? What are some commonly used compression techniques?
+	- Is online prediction or batch prediction more suitable? What are the trade-offs?
+	- Is real-time access to features possible? What are the challenges?
+	- How should we test the deployed model in production?
+	- An ML system consists of various components working together to serve requests. What are the responsibilities of each component in the proposed design?
+	- What technologies should we use to ensure that serving is fast and scalable?
+### **Monitoring
+- Why a system fails in production
+	- e.g., data distribution shift
+		- Two common approaches for dealing with data distribution shifts are:
+			- Train on large datasets. A big enough training dataset enables the model to learn a comprehensive distribution
+		- Regularly retrain the model using labeled data from the new distribution
+- What to monitor
+	- **Operation-related metrics**: Those metrics ensure the system is up and running. They include average serving times, throughput, the number of prediction requests, CPU/GPU utilization, etc.
+	- **ML-specific metrics**: 
+		- Monitoring inputs/outputs. Models are only as good as the data they consume, so monitoring the model’s input and outputs is vital.
+		- Drifts. Inputs to the system and the model’s outputs are monitored to detect changes in their underlying distribution.
+		- Model accuracy. For example, we expect the accuracy to be within a specific range.
+- Model versions. Monitor which version of the model is deployed.
+### **Infrastructure**
+- foundation for training, deploying, and maintaining ML systems.
+- may not be asked infra questions in ML system design interview, depending on your JD
+### **Be flexible!!**
+- If an interviewer is mainly interested in model development, you should almost always adhere to their focus
+
+# [[Personalized News Feed]]
+
 # [[Recommendation System]]

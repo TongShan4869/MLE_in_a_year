@@ -31,4 +31,43 @@ Predicts numbers
 	- More than one local minimum
 	- Squared error cost: convex function
 		- global minumum
-	- 
+## Multiple Variable linear regression
+- Multiple features
+	- $x_j$: jth feature
+	- n: number of features
+- Model
+	- parameters 
+		- $\vec w = [w_1 w_2 ... w_n]$ a vector
+		- $b$ is a number
+	- data $\vec x = [x_1 x_2 ... x_n]$
+	- notation:$$f_{\vec w,b}(\vec x) = w_1x_1+w_1x_2+...+w_nx_n+b = \vec w \cdot \vec x +b$$
+## Polynomial regression
+- notation: $$f_{\vec w,b}(x)=w_1x+w_2x^2+w_3w^3+...+b$$
+- **feature scaling is super important here**
+	- range of $x$, $x^2$, and $x^3$ is so different
+- might also be $$f_{\vec w,b}(x)=w_1x+w_2\sqrt x+...+b$$
+# Tricks to make computation easier
+- **vectorization**
+	- speed up computing
+	- `f = np.dot(w,x)+b`
+	- use **parallel** hardware instead of sequential
+	- For gradient descent
+		- $\vec w=\vec w-\alpha \vec d$
+		- `w = w - \alpha * d`
+		- cost function: $J(\vec w,b)$
+	- Normal equation
+		- only for linear regression 
+		- solve for w, b without iteration
+		- disadvantages: 
+			- doesn't generalize to other learning algorithms
+			- slow when number of features is large
+		- can be implemented in ml libraries
+		- GD is recommended 
+- **Feature Scaling**
+	- aim for about $-1<= x <=1$
+	- when different features have very different range of values
+		- GD hard to converge
+	- Methods
+		- divide by max
+		- mean normalization: $$x_{scaled}=\frac{x-\mu}{max-min}$$
+		- z-score normalization: $${x_{scaled}}=\frac{x-\mu}{\sigma}$$

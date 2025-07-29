@@ -81,4 +81,26 @@ link: https://www.coursera.org/specializations/machine-learning-introduction
 |**RMSprop**|Moving average of squared gradients|Fast convergence|Moderate|Avoids Adagrad’s decay issue|Non-stationary objectives|
 |**Adam**|Combines Momentum + RMSprop|Very fast|Moderate|Efficient, widely used|Most deep learning tasks|
 
-
+- Make sure gradient descent is working correctly
+	- **learning curve**: $J(\vec w, b)$ vs # of iterations
+		- should decrease after every iteration
+		- converge when no longer decreasing
+		- number of iterations needed varies
+	- automatic convergence test
+		- let $\epsilon$ be 10^-3
+		- if  $J(\vec w, b)$ decreases by  $<= \epsilon$ in one iteration declare convergence
+			- but $\epsilon$ is hard to define
+- **Choose a good learning rate**
+	- Identify problem with GD using learning curve
+	- $\alpha$ is too big
+		- learning curve bouncing
+		- increasing learning rate
+	- just set $\alpha$ to be a small number, cost function should decrease
+		- if J increase -> bugs in the code
+	- values of $\alpha$ to try:
+		- ... 0.001 -> 0.003 -> 0.01 -> 0.03 -> 0.1 -> 0.3 -> 1 ...
+		- increase by 3x
+	- choose the $\alpha$ that converge fast and also consistently decreasing
+## Feature engineering
+- using intuition to design new features, by transforming or combining original features
+- 

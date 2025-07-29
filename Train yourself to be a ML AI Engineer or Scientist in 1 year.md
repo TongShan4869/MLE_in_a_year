@@ -147,6 +147,9 @@ date: 2025-02-04
 - Resources
 	- [Stanford CS329S ML system design](https://stanford-cs329s.github.io/)
 	- [Full stack ML](https://fall2019.fullstackdeeplearning.com/)
+- [[Machine learning system design]]
+- [[Personalized News Feed]]
+- [[Recommendation System]]
 ## AI engineer
 - [What Is an AI Engineer? (And How to Become One)](https://www.coursera.org/articles/ai-engineer)
 - [[LLM]]

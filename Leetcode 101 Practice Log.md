@@ -77,3 +77,53 @@ link: https://noworneverev.github.io/leetcode_101/
 ### [340. Longest Substring with At Most K Distinct Characters](https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/)
 - always update the pointers after the condition check
 - the shrinking is conditioned on expanding, you always need to increase right index, otherwise if will not exit the while loop!!!
+# 07/30/2025 Binary Search
+- `二分查找`也常被称为`二分法`或者`折半查找` (binary search, bisect)，每次查找时通过将待查找的单调区间分成两部分并只取一部分继续查找，将查找的复杂度大大减少。对于一个长度为 O(n)O(n) 的数组，二分查找的时间复杂度为 O(log⁡n)O(logn)。
+- 具体到代码上，二分查找时区间的左右端取开区间还是闭区间在绝大多数时候都可以，因此有些初学者会容易搞不清楚如何定义区间开闭性。这里笔者提供两个小诀窍，第一是尝试熟练使用一种写法，比如左闭右开（满足 C++、Python 等语言的习惯）或左闭右闭（便于处理边界条件），尽量只保持这一种写法；第二是在刷题时思考如果最后区间只剩下一个数或者两个数，自己的写法是否会陷入死循环，如果某种写法无法跳出死循环，则考虑尝试另一种写法。
+- Binary search example codes: ```
+```python
+def recursion(array,target,left,right):
+    if left > right:
+        return False
+    mid = left + (right-left)//2
+    if array[mid] == target:
+        return True
+    elif target < array[mid]: # search left half
+        return recursion(array,target,left,mid-1)
+    else: # search right half
+        return recursion(array,target,mid+1,right)
+
+def iteration(array,target,left,right):
+    left, right = 0, len(array)-1
+    while left <= right:
+        mid = left + (right-left)//2
+        if array[mid] == target:
+            return True
+        elif target < array[mid]:
+            right = mid-1
+        else:
+            left = mid+1
+    return False
+```
+### [69. Sqrt(x)](https://leetcode.com/problems/sqrtx/)
+- Normal Approach: Binary Search
+	- Why return right always correct?
+	- because when exit while loop, left is always bigger than right. Consider two conditions:
+	- condition 1
+		- pivot^2 < x: left = pivot + 1, exit
+		- left > right, left = right+1, right = pivot
+		- right^2 < x but left^2 > x -> return right
+	- condition 2
+		- pivot^2 > x: right = pivot - 1, exit
+		- left > right, left = right+1, left = pivot
+		- left^2 > x but right^2 < x -> return right
+- Other approach: Recursion + Bit Shifts
+	- Let's use recursion. Bases cases are x​=x for x<2. Now the idea is to decrease x recursively at each step to go down to the base cases.
+	- That means one could rewrite the recursion above as `mySqrt(x)=mySqrt(x>>2)<<1`
+### [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+- define two functions
+	- `find_first`
+		- that's when you find a target, search left
+	- `find_last`
+		- that's when you find a target, search right
+		- 

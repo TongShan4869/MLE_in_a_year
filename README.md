@@ -122,10 +122,10 @@
 	- RNN
 	- LSTM
 	- [Transformer](Machine%20Learning/Deep%20Learning/NLP/Transformer.md)
-	- [LLM](Human-Computer%20Interaction/AI%20and%20AGI/LLM/LLM.md) (another thing, has its own job position now...)
+	- [LLM](Machine%20Learning/Deep%20Learning/LLM/LLM.md) (another thing, has its own job position now...)
 		- Fine-tuning
 			- RAG
-		- [Prompt Engineering for ChatGPT](Human-Computer%20Interaction/AI%20and%20AGI/LLM/Prompt%20Engineering%20for%20ChatGPT.md)
+		- [Prompt Engineering for ChatGPT](Machine%20Learning/Deep%20Learning/LLM/Prompt%20Engineering%20for%20ChatGPT.md)
 - Computer vision
 	- Resource: 
 		- [Stanford CS231N DL for CV](https://cs231n.github.io/)
@@ -142,10 +142,10 @@
 - [Recommendation System](Machine%20Learning/ML%20System/Recommendation%20System.md)
 ## AI engineer
 - [What Is an AI Engineer? (And How to Become One)](https://www.coursera.org/articles/ai-engineer)
-- [LLM](Human-Computer%20Interaction/AI%20and%20AGI/LLM/LLM.md)
+- [LLM](Machine%20Learning/Deep%20Learning/LLM/LLM.md)
 	- [Prompt Engineering](#broken-link)
-		- [Prompt Engineering for ChatGPT](Human-Computer%20Interaction/AI%20and%20AGI/LLM/Prompt%20Engineering%20for%20ChatGPT.md)
-		- [Retrieval Augmented Generation (RAG)](#broken-link)
+		- [Prompt Engineering for ChatGPT](Machine%20Learning/Deep%20Learning/LLM/Prompt%20Engineering%20for%20ChatGPT.md)
+		- [Retrieval Augmented Generation (RAG)](Machine%20Learning/Deep%20Learning/LLM/Retrieval%20Augmented%20Generation%20%28RAG%29.md)
 	- [AI Agent](#broken-link)
 		- Resources: 
 			- [500 AI Agents Projects](https://github.com/ashishpatel26/500-AI-Agents-Projects)

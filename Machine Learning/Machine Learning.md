@@ -70,16 +70,16 @@ link: https://www.coursera.org/specializations/machine-learning-introduction
 	- Stochastic GD: one datapoint
 	- Mini-batch GD
 
-|**Type**|**Gradient Computation**|**Speed**|**Memory Usage**|**Convergence**|**Best For**|
-|---|---|---|---|---|---|
-|**Batch Gradient Descent**|Entire dataset|Slow|High|Stable, can reach global minimum|Small to medium datasets|
-|**Stochastic Gradient Descent (SGD)**|Single data point per iteration|Fast (per update)|Low|Noisy, may bounce around minima|Large datasets, online learning|
-|**Mini-batch Gradient Descent**|Small batch (e.g., 32, 64)|Moderate|Moderate|Good balance of speed/stability|Deep learning, large datasets|
-|**Momentum**|Adds velocity term to gradient|Faster than vanilla|Moderate|Reduces oscillations, smoother path|High-dimensional spaces|
-|**Nesterov Accelerated Gradient**|Looks ahead before computing gradient|Faster convergence|Moderate|More responsive than Momentum|Deep nets with complex landscapes|
-|**Adagrad**|Scales learning rate per parameter|Slows over time|Moderate|Quickly adapts, but may stop early|Sparse features (e.g., NLP, vision)|
-|**RMSprop**|Moving average of squared gradients|Fast convergence|Moderate|Avoids Adagrad’s decay issue|Non-stationary objectives|
-|**Adam**|Combines Momentum + RMSprop|Very fast|Moderate|Efficient, widely used|Most deep learning tasks|
+| **Type**                              | **Gradient Computation**              | **Speed**           | **Memory Usage** | **Convergence**                     | **Best For**                        |
+| ------------------------------------- | ------------------------------------- | ------------------- | ---------------- | ----------------------------------- | ----------------------------------- |
+| **Batch Gradient Descent**            | Entire dataset                        | Slow                | High             | Stable, can reach global minimum    | Small to medium datasets            |
+| **Stochastic Gradient Descent (SGD)** | Single data point per iteration       | Fast (per update)   | Low              | Noisy, may bounce around minima     | Large datasets, online learning     |
+| **Mini-batch Gradient Descent**       | Small batch (e.g., 32, 64)            | Moderate            | Moderate         | Good balance of speed/stability     | Deep learning, large datasets       |
+| **Momentum**                          | Adds velocity term to gradient        | Faster than vanilla | Moderate         | Reduces oscillations, smoother path | High-dimensional spaces             |
+| **Nesterov Accelerated Gradient**     | Looks ahead before computing gradient | Faster convergence  | Moderate         | More responsive than Momentum       | Deep nets with complex landscapes   |
+| **Adagrad**                           | Scales learning rate per parameter    | Slows over time     | Moderate         | Quickly adapts, but may stop early  | Sparse features (e.g., NLP, vision) |
+| **RMSprop**                           | Moving average of squared gradients   | Fast convergence    | Moderate         | Avoids Adagrad’s decay issue        | Non-stationary objectives           |
+| **Adam**                              | Combines Momentum + RMSprop           | Very fast           | Moderate         | Efficient, widely used              | Most deep learning tasks            |
 
 - Make sure gradient descent is working correctly
 	- **learning curve**: $J(\vec w, b)$ vs # of iterations
@@ -103,4 +103,5 @@ link: https://www.coursera.org/specializations/machine-learning-introduction
 	- choose the $\alpha$ that converge fast and also consistently decreasing
 ## Feature engineering
 - using intuition to design new features, by transforming or combining original features
+- Polynomial [[Regression]]
 - 

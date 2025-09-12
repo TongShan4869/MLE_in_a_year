@@ -126,4 +126,49 @@ def iteration(array,target,left,right):
 		- that's when you find a target, search left
 	- `find_last`
 		- that's when you find a target, search right
-		- 
+
+```python
+class Solution:
+	def searchRange(self, nums:List[int], target:int) -> List[int]:
+		def find_first(nums, target):
+			left = 0
+			right = len(nums)-1
+			while left <= right:
+				pivot = left+(right-left)//2
+				if num[pivot] >= x:
+					right = pivot-1
+				elif num[pivot] < x:
+					left = pivot+1
+				return left if (left < len(nums)) and (nums[right]==target) else -1
+				
+		def find_last(nums, target):
+			left = 0
+			right = len(nums)-1
+			while left <= right:
+				pivot = left+(right-left)//2
+				if num[pivot] <= x:
+					right = pivot-1
+				elif num[pivot] < x:
+					left = pivot+1
+				return right if (right >= 0) and (nums[right]==target) else -1
+				
+		return [find_first(nums, target), find_last[nums, target]]		
+```
+
+## [162. Find Peak Element](https://leetcode.com/problems/find-peak-element/)
+- optimal and simplest solution:
+```python
+class Solution:
+	def findPeakElement(self, nums: List[int]) -> int:
+		l = 0
+		r = len(nums) - 1
+		while l < r:
+			mid = (l + r) // 2
+			if nums[mid] > nums[mid + 1]:
+				r = mid
+			else:
+				l = mid + 1
+		return l # leave while loop when l=r=peak, return whatever
+```
+- Inside the loop, always shrink the interval toward the side that contains peak, and includes the potential peak!!!
+- 

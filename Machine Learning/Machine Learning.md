@@ -35,6 +35,7 @@ link: https://www.coursera.org/specializations/machine-learning-introduction
 ## Parameters
 - coefficient / weights
 ## Cost function
+- **NOTE: Loss is defined to apply to one example. Cost is defined to combined loss.**
 - use in training examples to find the best parameters for the model
 	- e.g., linear regression: sum of error squared [[Regression]]
 ## **Gradient Decent**
@@ -104,4 +105,18 @@ link: https://www.coursera.org/specializations/machine-learning-introduction
 ## Feature engineering
 - using intuition to design new features, by transforming or combining original features
 - Polynomial [[Regression]]
-- 
+## The Problem of Overfitting
+- Concepts:
+	- **Underfit**: does not fit the training set well
+		- high **bias**
+	- **Just right**: fit training set pretty well
+		- **Generalization**
+	- **Overfit**: first the training set extremely well
+		- high **variance**
+- **Addressing overfitting**
+	- Collect more training data
+	- Select features to include / exclude
+		- useful features could be lost
+	- **Regularization 
+		- reduce the size of parameters $w_j$
+	

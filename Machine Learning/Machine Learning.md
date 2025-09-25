@@ -16,6 +16,7 @@ link: https://www.coursera.org/specializations/machine-learning-introduction
 - **[[Supervised learning]]**
 	- rapid advancements used most in real-world applications
 - **[[Unsupervised learning]]**
+- [[Neural Network]]
 - recommender system 
 - reinforcement learning
 
@@ -118,5 +119,46 @@ link: https://www.coursera.org/specializations/machine-learning-introduction
 	- Select features to include / exclude
 		- useful features could be lost
 	- **Regularization 
-		- reduce the size of parameters $w_j$
-	
+		- **Definition**
+			- reduce the size of parameters $w_j$
+			- results in simpler model - less likely to overfit
+			- **Cost function** 
+				- **Ridge regularization** (i.e., L2)
+					- $Loss=MSE+λ∑​βj^2​$ 
+					- in linear regression:$$J(\mathbf{w},b) = \frac{1}{2m} \sum\limits_{i = 0}^{m-1} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)})^2  + \frac{\lambda}{2m}  \sum_{j=0}^{n-1} w_j^2 \tag{1}$$$$ f_{\mathbf{w},b}(\mathbf{x}^{(i)}) = \mathbf{w} \cdot \mathbf{x}^{(i)} + b  \tag{2} $$
+					- the weights can be super small near 0
+					- When there are many features (p is large), but most of them are useful and you don’t want to discard any completely
+					- When multicollinearity exists (features are highly correlated), Ridge can stabilize the solution
+					- When you want the model to be more stable and prefer smoother coefficients
+				- **LASSO** (i.e., L1)
+					- $Loss=MSE+λ∑​∣βj​∣$
+					- the weights can be exactly 0 -> some sort of feature selection
+					- when the number of features is much larger than the number of sample (p >> n)
+					- When there are many features, but you suspect that only a small subset of them are truly useful.
+					- When you want to perform automatic feature selection (Lasso will shrink some coefficients exactly to zero).
+					- When model interpretability is important, and you want to retain only a few key features.
+				- **Elastic Net**
+					- Cost function
+					- $Loss=MSE+λ​_1∑∣βj​∣+λ_2​∑βj2​$
+					- Combines the **feature selection** property of Lasso with the **stability** of Ridge.
+					- Performs better in **high-dimensional settings** with **correlated features**.
+					- Allows control over the balance between Lasso and Ridge by tuning$$\alpha=\frac{\lambda_1}{\lambda_1+\lambda_2}​$$
+						- $\alpha = 1$ → pure Lasso
+						- $\alpha = 0$ → pure Ridge
+						- $0<\alpha < 1$ → Elastic Net
+			- regularization parameter $\lambda$
+				- penalize large $w$s
+				- if $\lambda =0$ -> may overfit
+				- if $\lambda$ very big-> $w$s became small / near 0 -> underfit
+			- can include or exclude $b$
+		- **Gradient Descent**
+			- only $w_j$ changes
+			- $f_{\mathbf{w}b}$
+			$$\begin{align*}
+\frac{\partial J(\mathbf{w},b)}{\partial w_j}  &= \frac{1}{m} \sum\limits_{i = 0}^{m-1} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)})x_{j}^{(i)}  +  \frac{\lambda}{m} w_j \tag{2} \\
+\frac{\partial J(\mathbf{w},b)}{\partial b}  &= \frac{1}{m} \sum\limits_{i = 0}^{m-1} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)}) \tag{3} 
+\end{align*}$$
+			- instead of regular $w_j - updating terms$ , its now $(1-\alpha\frac{\lambda}{m})$, which is a scalar that slightly smaller than 1
+				- this shrink the $w_j$ in GD
+		- see how it apply to logistic regression in [[Classification]]
+

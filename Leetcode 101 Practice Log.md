@@ -155,7 +155,7 @@ class Solution:
 		return [find_first(nums, target), find_last[nums, target]]		
 ```
 
-## [162. Find Peak Element](https://leetcode.com/problems/find-peak-element/)
+### [162. Find Peak Element](https://leetcode.com/problems/find-peak-element/)
 - optimal and simplest solution:
 ```python
 class Solution:
@@ -171,4 +171,5 @@ class Solution:
 		return l # leave while loop when l=r=peak, return whatever
 ```
 - Inside the loop, always shrink the interval toward the side that contains peak, and includes the potential peak!!!
+### [81. Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)
 - 

@@ -110,3 +110,7 @@ dj_db = dj_db/m                                   #scalar
 	
 return dj_db, dj_dw 
 ```
+
+## Regularized logistic regression
+- Cost function
+- 

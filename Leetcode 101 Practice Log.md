@@ -172,4 +172,76 @@ class Solution:
 ```
 - Inside the loop, always shrink the interval toward the side that contains peak, and includes the potential peak!!!
 ### [81. Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)
-- 
+```python
+def search(self, nums: List[int], target: int) -> bool:
+	# Define left and right index
+	l, r = 0, len(nums)-1
+	while l <= r:
+		# find mid
+		mid = l+(r-l)//2
+		# if find mid == target
+		if nums[mid] == target:
+			return True
+		# shrink the nums list if mid == left or if mid == right
+		elif nums[mid] == nums[l]:
+			l += 1
+		elif nums[mid] == nums[r]:
+			r -= 1
+		# if mid > l, left part is non-decreasing for sure
+		elif nums[mid] > nums[l]:
+			# if mid > target > l, search left
+			# if target < l or target > mid, search right
+			if target >= nums[l] and target < nums[mid]:
+				r = mid - 1
+			else:
+				l = mid + 1
+		# if mid < l, right part is non-decreasing for sure
+		elif nums[mid] < nums[l]:
+			# if mid < target < r, search right
+			# if target > r, search left
+			if target <= nums[r] and target > nums[mid]:
+				l = mid + 1
+			else:
+				r = mid - 1
+	return False
+```
+
+### [154. Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/)
+```python
+def findMin(self, nums: List[int]) -> int:
+	left, right = 0, len(nums)-1
+	while left < right:
+		mid = left + (right - left) // 2
+		if nums[mid] > nums[right]:
+			left = mid + 1
+		elif nums[mid] < nums[right]:
+			right = mid
+		else: # if equal
+			right -= 1
+	return nums[left]
+```
+### [540. Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/)
+```python
+def singleNonDuplicate(self, nums: List[int]) -> int:
+	# the length of nums is always odd
+	# find the mid
+	# consider if the window left and right is odd or even
+	left, right = 0, len(nums)-1
+	while left < right:
+		mid = left + (right-left)//2
+		half_window = mid - left
+		# MISTAKE: YOU MUST CHECK IF MID AND MID-1 AND MID+1 EQUAL!
+		if nums[mid] != nums[mid-1] and nums[mid] != nums[mid+1]: # if using & then you must add () to logical comments!!!
+			return nums[mid]
+		if nums[mid] == nums[mid-1]:
+			if half_window % 2:
+			left = mid + 1
+			else:
+			right = mid - 2 # MISTAKE: YOU MUST DELETE BOTH TO MAKE SURE THAT THE WINDOW IS ODD LENGTH!!
+		elif nums[mid] == nums[mid+1]:
+			if half_window % 2:
+			right = mid - 1
+			else:
+			left = mid + 2 # YOU MUST DELETE BOTH TO MAKE SURE THAT THE WINDOW IS ODD LENGTH!!
+	return nums[left] # return nums[right] also work, because when exit loop, left == right
+```

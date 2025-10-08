@@ -80,3 +80,44 @@ tags:
   ```
   
 
+# Train a NN in `TensorFlow`
+## Specify model
+- `Sequential`
+
+- 
+## Compile
+- with loss function
+- `model.compile(loss=BinaryCrossentropy())`
+- Binary Cross Entropy loss function
+	- similar to the loss for logistic regression
+	- `from tensorflow.keras.losses import BinaryCrossentropy`
+		- alternatively, for regression task: `from tensorflow.keras.losses import MeanSquareError`
+- note: **cost function** is the average of **loss function** from all training data
+## Fit
+- Gradient Decent to minimize cost
+- **Back propagation**
+- `model.fit(X,y, epochs=100)`
+
+## Activation function
+### Functions
+- linear activation g(z) =z
+	- sometimes refer to "No activation function"
+- Sigmoid 0<g(z)<1
+- Rectified linear unit (ReLU)
+	- g(z)= max(0,z)
+	- if z<0, g(z) = 0, if z >=0, g(z) = z
+- Softmax
+- LeakyReLU, tanh, etc...
+### How to choose?
+- Output layer depends on the task
+	- binary classification: sigmoid
+	- regression
+		- linear activation, y=- or +, e.g., stock change
+		- ReLU: y>=0
+- Hidden layer
+	- **ReLU**: most common choice
+	- faster to compute
+	- `Dense(unit=25, activation='relu')`
+### Why activation function?
+- if you don't use activation, it become a regular linear regression model
+- NN is better bc its non-linearity

@@ -245,3 +245,31 @@ def singleNonDuplicate(self, nums: List[int]) -> int:
 			left = mid + 2 # YOU MUST DELETE BOTH TO MAKE SURE THAT THE WINDOW IS ODD LENGTH!!
 	return nums[left] # return nums[right] also work, because when exit loop, left == right
 ```
+### [4. Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
+```python
+def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+	m, n = len(nums1), len(nums2)
+	total_len = m + n
+	p1, p2 = 0, 0
+	# We will keep track of the two middle elements
+	prev, curr = -1, -1
+	# We only need to iterate up to the midpoint of the merged array
+	for _ in range(total_len // 2 + 1):
+		# Update prev to the last value of curr
+		prev = curr
+	# Determine the next smallest element and update curr
+	# This condition handles cases where one array is exhausted
+		if p1 < m and (p2 >= n or nums1[p1] <= nums2[p2]):
+			curr = nums1[p1]
+			p1 += 1
+		else:
+		curr = nums2[p2]
+		p2 += 1
+	# After the loop, we have the middle element(s)
+	if total_len % 2 == 1:
+		# If total length is odd, the median is the last element found
+		return float(curr)
+	else:
+		# If total length is even, it's the average of the last two
+		return (prev + curr) / 2.0
+```

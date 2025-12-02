@@ -121,3 +121,68 @@ tags:
 ### Why activation function?
 - if you don't use activation, it become a regular linear regression model
 - NN is better bc its non-linearity
+
+# Multiclass Classification Problem
+## Softmax activatioon
+- $$a_j = \frac{e^{z_j}}{ \sum_{k=1}^{N}{e^{z_k} }} \tag{1}$$
+- Crossentropy Loss
+- $$\begin{equation}
+  L(\mathbf{a},y)=\begin{cases}
+    -log(a_1), & \text{if $y=1$}.\\
+        &\vdots\\
+     -log(a_N), & \text{if $y=N$}
+  \end{cases} \tag{3}
+\end{equation}$$
+## Softmax in Tensorflow
+- `activation ='softmax'`
+- `loss = SparseCategoricalCrossentropy()` -> not recommended here!
+- Numerical roundoff errors
+	- do it in numerically stable way
+	- Logistic regression
+		- `activation='linear'`
+		- `model.complie(loss=BinaryCrossEntropy(from_logits=True))`
+	- Softmax
+		- `activation='linear'` -> output `z_j` not `a_j`
+		- `model.complie(loss=SparseCategoricalCrossEntropy(from_logits=True))`
+		- to predict: `f_x=tf.nn.softmax(logits)`
+##  `SparseCategorialCrossentropy` or `CategoricalCrossEntropy`
+Tensorflow has two potential formats for target values and the selection of the loss defines which is expected.
+- `SparseCategorialCrossentropy`: expects the target to be an integer corresponding to the index. For example, if there are 10 potential target values, y would be between 0 and 9. 
+- `CategoricalCrossEntropy`: Expects the target value of an example to be one-hot encoded where the value at the target index is 1 while the other N-1 entries are zero. An example with 10 potential target values, where the target is 2 would be [0,0,1,0,0,0,0,0,0,0].
+# Multi-label Classification Problem
+- single object may have multiple labels
+	- a picture can contain car/bus/pedestrian at the same time
+- make output layer with N sigmoid activations (not softmax)
+
+# Optimization
+## Adam algorithm
+- adaptive moment estimation
+- if w_j or b keeps moving in same direction, increase $\alpha$
+- if w_j or b keeps oscillating, decrease $\alpha$
+- `model.complie(optimizer=tf.keras.optimizers.Adam(learningrate=1e-3))`
+# Additional layer types
+## convolutional layer
+- each neuron only looks at part of the previous layers' output
+- convolutional neural network
+	- e.g., EKG
+# Backprop
+- cost function take derivative
+	- if derivative is small, then this update step will make a small update to $w_j$
+	- if the derivative is large, then this update step will make a large update to $w_j$ 
+``
+```python
+import sympy
+J, w = sympy.symbols('J,w')
+J = w**2
+dJ_dw = sympy.diff(J,w)
+dJ_dw.subs([w,2])
+```
+- $d$ for derivative
+- $\partial$ for partial derivative
+# Computation graph
+- Forward prop
+- ![[Screenshot 2025-10-15 at 11.21.22 AM.png]]
+- Back prop
+- ![[Screenshot 2025-10-15 at 11.28.45 AM.png]]
+- Intuition in NN
+	- 

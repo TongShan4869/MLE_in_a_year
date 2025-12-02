@@ -162,3 +162,84 @@ link: https://www.coursera.org/specializations/machine-learning-introduction
 				- this shrink the $w_j$ in GD
 		- see how it apply to logistic regression in [[Classification]]
 
+# Evaluating / Diagnosing models
+## Train/Test  procedure
+- fit parameter by minimizing cost function
+- compute test error
+- for classification problem
+	- can use cost function
+	- can also use: fraction of the test set and the fraction of the trainset that the model has misclassified
+## Model selection 
+- it will be biased if you choose parameter based on test set eval
+## Training/validation set/test set procedure
+- validation error
+- use validation error to choose parameters
+- then estimate generalization error using test set
+- for classification problem
+	- when there is a tie in model, can add another criteria to break it:
+		- choose the one with a lower training error
+		- a more common approach: choose the smaller model saving computational resources. 
+## Bias and Variance
+- High bias = **underfit**
+	- $J_{train}$ is high
+	- $J_{val}$ is high
+	- $J_{val} \approx J_{train}$
+- High variance = **overfit**
+	- $J_{train}$ is low
+	- $J_{val}$ is high
+	- $J_{val}>>J_{train}$
+- "Just right"
+	- $J_{train}$ is low
+	- $J_{val}$ is low
+- High bias and high variance
+	- less likely but happen when model overfit for some training data points but underfit on other points
+	- $J_{train}$ is high
+	- $J_{val}>>J_{train}$ 
+### Regularization
+- choosing parameters of $\lambda$
+- based on $J_{train}$ and $J_{val}$ 
+### Establishing a baseline level of performance
+- what is the level of error you can reasonably hope to get to?
+- human level performance
+- competing algorithms performance
+- guess based on experience
+- Bias/variance examples
+	- (training error - baseline) is large & (training error - validation error) is small -> high bias
+	- (training error - baseline) is small & (training error - validation error) is large -> high variance
+	- (training error - baseline) is large & (training error - validation error) is large -> high bias and high variance
+## Learning curves
+- `error` vs. `training set size`
+- high bias
+- ![[Screenshot 2025-12-02 at 11.30.49 AM.png]]
+	- increasing training set size wont's be very helpful
+- high variance
+	- ![[Screenshot 2025-12-02 at 11.31.28 AM.png]]
+	- increase the training set size likely to help
+## Decide what to try next
+- Debugging a learning algorithms with **bias** and **variance**
+- Fix **high bias**
+	- **get more complex model**
+		- getting additional features
+		- adding polynomial feature
+		- try *decreasing* $\lambda$
+- Fix **high variance**
+	- **get more training examples**
+	- **simplify the model**
+		- try smaller sets of features
+		- try *increasing* $\lambda$
+- The bias and variance trade-off
+	- Large neural networks are low bias machines
+	- ![[Screenshot 2025-12-02 at 11.53.05 AM.png]]
+	- Does it do well on the training set?
+		- No -> high bias -> bigger network (! GPU issue) -> loopback
+		- Yes ->
+			- Does it do well on cross validation set?
+				- No -> high variance -> more data ->loopback
+				- Yes -> done!
+	- A large neural network will usually do as well or better than a smaller one so long as regularization is chosen appropriately
+	- Regularization for NN
+		- 
+		- in `Tensorflow`
+			- `layer_1 = Dense(units=25, activation='relu', kernel_regularizer=L2(0.01))`
+	- 
+

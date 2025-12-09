@@ -37,70 +37,74 @@ date: 2025-02-04
 	- 
 ### [[Statistics]]
 ## [[Computer science]]
-- Resources
-	- [Leetcode (Interview 150)](https://leetcode.com/studyplan/top-interview-150/)
-	- [Leetcode-101](https://noworneverev.github.io/leetcode_101/)
-		- Notes: [[Leetcode 101 Practice Log]]
-- [[Algorithms]]
-	- Greedy algorithms
-	- Two pointers
-		- two sum
-		- merge
-		- sliding window
-	- Binary search / bisection
-	- Sorting
-		- Quicksort
-		- merge sort
-		- radix sort
-	- Search
-		- depth-first search (DFS)
-		- backtracking
-		- breadth-ﬁrst search (BFS)
-	- Dynamic Programming (DP)
-	- Divide and Conquer
-	- 
-	- Shortest path
-		- Dijkstra's
-		- A*
-	- Tree algorithms
-		- pre-order traversal
-		- in-order traversal
-		- post-order traversal
-	- Popular problems
-		- stable marriage problem
-		- traveling salesman problem
+### Resources
+- [Leetcode (Interview 150)](https://leetcode.com/studyplan/top-interview-150/)
+- [Leetcode-101](https://noworneverev.github.io/leetcode_101/)
+	- Notes: [[Leetcode 101 Practice Log]]
+### [[Algorithms]]
+- Greedy algorithms
+- Two pointers
+	- two sum
+	- merge
+	- sliding window
+- Binary search / bisection
+- Sorting
+	- Quicksort
+	- merge sort
+	- radix sort
+- Search
+	- depth-first search (DFS)
+	- backtracking
+	- breadth-ﬁrst search (BFS)
+- Dynamic Programming (DP)
+- Divide and Conquer
+- 
+- Shortest path
+	- Dijkstra's
+	- A*
+- Tree algorithms
+	- pre-order traversal
+	- in-order traversal
+	- post-order traversal
+- Popular problems
+	- stable marriage problem
+	- traveling salesman problem
 - [[Complexity]]
-- Data
-	- [[Data structure]]
-		- trees
-			- binary search tree
-			- heap
-			- trie (prefix and suffix tree)
-		- Queues, stacks, priority queues
-		- Linked lists
-		- HashMap and HashTable
-	- Data manipulation
-		- pandas
-		- dask
-	- Data visualization
+###  Data
+- [[Data structure]]
+	- trees
+		- binary search tree
+		- heap
+		- trie (prefix and suffix tree)
+	- Queues, stacks, priority queues
+	- Linked lists
+	- HashMap and HashTable
+- Data manipulation
+	- pandas
+	- dask
+- Data visualization
 ## [[Machine Learning]]
+
+### Resources
+- [Machine Learning Specialization](https://www.coursera.org/specializations/machine-learning-introduction/paidmedia?utm_medium=sem&utm_source=gg&utm_campaign=b2c_namer_machine-learning-introduction_stanford_ftcof_specializations_px_dr_bau_gg_sem_pr-bd_us-ca_en_m_hyb_16-10_x&campaignid=685340575&adgroupid=32639001781&device=c&keyword=machine%20learning%20data%20science%20tutorial&matchtype=b&network=g&devicemodel=&creativeid=650958196470&assetgroupid=&targetid=aud-872880446373:kwd-1139178902294&extensionid=&placement=&gad_source=1&gad_campaignid=685340575&gbraid=0AAAAADdKX6b8TLvpIrppNNnkqmj6xdFUO&gclid=CjwKCAjw4K3DBhBqEiwAYtG_9Pms-J2mFwpvM5-PhV_k9lizaUb6H9B0-U3ZJ6wuqZRv06xblU9jkhoCG2wQAvD_BwE#courses)
+- 
 ### [[Machine Learning Basic concept]]
 - Basics
 - Sampling and creating training data
 - Objective functions, metrics, and evaluation
 ### [[Classical Machine Learning Algorithms]]
-- Supervised Learning Models
-	- Regression
+- [[Supervised learning]]
+	- [[Regression]]
 		- Linear regression
 		- Polynomial regression
 		- Regularized regression
 		- Time series analysis/forecasting
-	- Classification 
+	- [[Classification]]
 		- Naive Bayes
 		- KNN
 		- Logistic regression
 		- Tree-based
-			- Decision tree
+			- [[Decision Tree]]
 			- Random forest
 	- Bagging and boosting
 		- bagging
@@ -109,7 +113,7 @@ date: 2025-02-04
 			- AdaBoost
 			- Gradient boosting
 			- XGBoost
-- Unsupervised Learning
+- [[Unsupervised learning]]
 	- Dimensionality reduction
 		- PCA
 		- tSNE
@@ -122,7 +126,7 @@ date: 2025-02-04
 - Resource: 
 	- [Practical Deep Learning for Coders by fast.ai](https://course.fast.ai/)
 - Perceptrons
-- Feed forward networks
+- Feed forward networks [[Neural Network]]
 - CNN
 	- Resource
 		- [Stanford CS231N CNN](https://www.youtube.com/playlist?list=PLzUTmXVwsnXod6WNdg57Yc3zFx_f-RYsq)
@@ -134,8 +138,9 @@ date: 2025-02-04
 	- [[Transformer]]
 	- [[LLM]] (another thing, has its own job position now...)
 		- Fine-tuning
-			- RAG
-		- [[Prompt Engineering for ChatGPT]]
+		- [[Retrieval Augmented Generation (RAG)]]
+		- [[Prompt Engineering]]
+			- [[Prompt Engineering for ChatGPT]]
 - Computer vision
 	- Resource: 
 		- [Stanford CS231N DL for CV](https://cs231n.github.io/)
@@ -168,5 +173,3 @@ date: 2025-02-04
 - Medium blog post
 - Twitter
 - LinkedIn
-
-[[Big Yang's interview tips]]

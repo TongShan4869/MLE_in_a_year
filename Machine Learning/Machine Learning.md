@@ -15,8 +15,9 @@ link: https://www.coursera.org/specializations/machine-learning-introduction
 # Machine learning Algorithms
 - **[[Supervised learning]]**
 	- rapid advancements used most in real-world applications
+	- [[Decision Tree]]
 - **[[Unsupervised learning]]**
-- [[Neural Network]]
+- **[[Neural Network]]**
 - recommender system 
 - reinforcement learning
 
@@ -238,8 +239,71 @@ link: https://www.coursera.org/specializations/machine-learning-introduction
 				- Yes -> done!
 	- A large neural network will usually do as well or better than a smaller one so long as regularization is chosen appropriately
 	- Regularization for NN
-		- 
 		- in `Tensorflow`
 			- `layer_1 = Dense(units=25, activation='relu', kernel_regularizer=L2(0.01))`
-	- 
+# Iterative loop of ML development
+## Choose architecture
+- model, data, etc
+## Train model
+## Diagnostics
+- bias, variance
+- **Error analysis**
+	- manually examine the data points that are incorrect
+	- see their pattern to decide what to do next for the model
+	- if the data points are too big, randomly sample 
+## Error metrics for skewed datasets
+- y=1 in presence of rare class we want to detect
+- **Precision** = True positives / predicted positive = true positives / (true pos + false pos)
+- **Recall** = True positives / actual positives =  true positives / (true pos + false neg)
+- Trade-off of precision and recall
+	- Suppose we want to predict y=1 (rare disease) only if very confident
+		- adjust threshold higher:0.5 -> 0.7
+		- higher precision, lower recall
+	- Suppose we want to avoid missing too many case of rare disease (when in doubt predict y=1)
+		- adjust threshold lower: 0.5 -> 0.3, more generally predict 1
+		- lower precision, higher recall
+- F1 score
+	- how to compare precision/recall numbers?
+	- harmonic mean $F1 = \frac {1} {1/2(1/P+1/R)} = 2 \frac {PR}{P+R}$
+	- emphasize on the small value of P or R
+## Adding data
+- Normally:
+	- add more data of everything
+	- add more data of the types where error analysis has indicated it might help
+- techniques beyond getting brand new training examples (x,y): 
+- **data augmentation**
+	- modifying an existing training exampler to create a new training example
+	- e.g., distortion of the image: rotation, scale, mirror, etc.
+	- e.g., audio: background noise, bad cellphone connection...
+- **Data synthesis**
+	- photo OCR tasks: generate from fonts
+## Transfer learning
+- **Supervised pre-training**: Train all parameters
+- **Fine-tuning**: only train output layers parameters
+- Pipeline:
+	- Download NN parameters pretrained on a large dataset with same input type
+	- Further train (fine-tune) the network on your own data
+# Full cycle of a ML project
+1. **Scope project**: define project
+2. **Collect data**: define and collect data
+3. **Train model**: training, error analysis, iterative improvement
+4. **Deploy in production**: deploy, monitor and maintain system
+	- Mobile app -> API call -> Inference server (ML model) -> Inference -> Mobile app
+	- Software engineering (**MLOps**) may be needed for
+		- Ensure reliable and efficient predictions
+		- Scaling
+		- Logging
+		- System monitoring
+	- See more in [[Machine learning system design]] and [[System Design]]
+## Fairness, Bias and Ethics
+### Bias
+- e.g.
+	- hiring tool that discriminates against women
+	- facial recognition system matching dark skinned individual s to criminal mugshots
+	- biased back loan approvals
+- Adverse use cases like deepfake
+### Guidelines
+- diverse team with emphasis
+- carry out literature search on standards/guidelines for your industry
+
 

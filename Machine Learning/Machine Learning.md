@@ -5,6 +5,7 @@ tags:
   - CS
   - supervised
   - unsupervised
+  - DNN
 link: https://www.coursera.org/specializations/machine-learning-introduction
 ---
 >[!note] [Scikit learn](https://scikit-learn.org/1.5/index.html) is your best friend for this!

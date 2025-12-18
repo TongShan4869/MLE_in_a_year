@@ -3,6 +3,7 @@ tags:
   - ML
   - MLE
   - supervised
+  - classification
 ---
 # Logistic regression
 ## Binary classification

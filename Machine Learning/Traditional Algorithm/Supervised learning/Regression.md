@@ -3,6 +3,7 @@ tags:
   - MLE
   - ML
   - supervised
+  - regression
 ---
 Predicts numbers
 # Linear regression

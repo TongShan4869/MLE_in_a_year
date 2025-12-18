@@ -3,6 +3,7 @@ tags:
   - ML
   - MLE
   - unsupervised
+  - decisionTree
 ---
 # Architecture
 ## Root node (top)

@@ -2,6 +2,7 @@
 tags:
   - ML
   - MLE
+  - supervised
 ---
 # Definition
 - mapping: input -> output label

@@ -3,7 +3,7 @@
 # === CONFIGURATION ===
 PRIVATE_VAULT="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/Knowledge"
 PUBLIC_VAULT="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/MLE-Training"
-README_SOURCE="$PRIVATE_VAULT/Train yourself to be a ML AI Engineer or Scientist in 1 year.md"
+README_SOURCE="$PRIVATE_VAULT/Machine Learning/Train yourself to be a ML AI Engineer or Scientist in 1 year.md"
 README_TARGET="$PUBLIC_VAULT/README.md"
 
 echo "🔁 Syncing MLE-tagged notes from private vault to public vault..."
